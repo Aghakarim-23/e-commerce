@@ -116,3 +116,4 @@ window.addEventListener("click", () => {
 
 const products = [product1, product2, product3, product4]
 
+// change
