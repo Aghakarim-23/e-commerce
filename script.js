@@ -1,21 +1,9 @@
-// (1) Pəncərələrin açılması üçün qısa funksiya
 function productPage(prop) {
   window.open(`${prop}`, "_self");
 }
 
-// (2) Pul vahidinin üstünə vuranda ikonun dəyişməsi üçün
-const valyutaKecid = document.getElementsByClassName("money");
-const kommunal = document.getElementsByClassName("currencyMenu");
+// !kateqoriya linklerinin calismasi ucun
 
-for (let i = 0; i < valyutaKecid.length; i++) {
-  valyutaKecid[i].addEventListener("click", () => {
-    kommunal[0].innerHTML =
-      valyutaKecid[i].innerText.slice(0, 1) +
-      '<i class="fa-solid fa-angle-down"></i>';
-  });
-}
-
-// (3) Kateqoriyalara vuranda hoverinin remove - aktive olması üçün
 const categoryItem = document.getElementsByClassName("categoryItem");
 for (let i = 0; i < categoryItem.length; i++) {
   categoryItem[i]?.addEventListener("click", () => {
@@ -28,92 +16,120 @@ for (let i = 0; i < categoryItem.length; i++) {
   });
 }
 
-// (4) Ölçülərin üstünə klik edəndə hoverinin remove-aktive olması üçün
-const sizeButton = document.getElementsByClassName("sizeButtonFunc");
-for (let i = 0; i < sizeButton.length; i++) {
-  sizeButton[i]?.addEventListener("click", () => {
-  console.log("snjbdh")
-    sizeButton[i]?.classList.add("active");
-    for (let u = 0; u < sizeButton.length; u++) {
-      if (sizeButton[u] !== sizeButton[i]) {
-        sizeButton[u]?.classList.remove("active");
-      }
-    }
-  });
-}
+// ? PUL VAHIDININ DEYISMESI UCUN
 
-// (5) Rəng seçiminin üzərinə klik edəndə hoverinin remove-aktive olması üçün
-const kholor = document.getElementsByClassName("kholor");
-for (let i = 0; i < kholor.length; i++) {
-  kholor[i]?.addEventListener("click", () => {
-    kholor[i]?.classList.add("active");
-    for (let u = 0; u < kholor.length; u++) {
-      if (kholor[u] !== kholor[i]) {
-        kholor[u]?.classList.remove("active");
-      }
-    }
-  });
-}
+// ?const currencyMenu = document.getElementsByClassName("currencyMenu");
 
-// (6) Şopinqə klik edəndə şopinqin və arxa fonun blur olması üçün
+//! sebetin acilib baglanmasi ucun
+const shoppingMenu = document.getElementsByClassName("shoppingMenu");
 const cartOverlayContainer = document.getElementsByClassName(
   "cartOverlay-container"
 );
+const OverlayContainer = document.getElementsByClassName("overlay");
 
-for(let i = 0; i < cartOverlayContainer.length; i++){
-  cartOverlayContainer[i].addEventListener("click", (e)=>{
-    e.stopPropagation()
-  })
-}
-
-const overlay = document.getElementsByClassName("overlay");
-const shoppingMenu = document.getElementsByClassName("shoppingMenu");
 for (let i = 0; i < shoppingMenu.length; i++) {
-  shoppingMenu[i]?.addEventListener("click", (e) => {
-    e.stopPropagation()
-    currency[i].classList.remove("active");
-    overlay[i]?.classList.toggle("active");
+  shoppingMenu[i].addEventListener("click", (e) => {
+    e.stopPropagation();
+    OverlayContainer[i]?.classList.toggle("active");
     cartOverlayContainer[i]?.classList.toggle("active");
-    // console.log(1);
+
+    currency[i].classList.remove("active");
+
+    // console.log("okay");
+  });
+
+  // ! ERROR verir bu
+  // sual isaresi yazmamisdim  ona gore error verirmis
+  cartOverlayContainer[i]?.addEventListener("click", (e) => {
+    e.stopPropagation();
   });
 }
 
-// (7) Bu funksiya məncə currency menunun içindəkilərin ancaq işarəsini göstərmək üçün idi
-// Sadəcə HTML - i pozdum indidə yadıma düşmür ):
-const currency = document.getElementsByClassName("currency");
-const currencyArrow = document.getElementsByClassName("currencyMenu");
-for (let i = 0; i < currencyArrow.length; i++) {
-  currencyArrow[i]?.addEventListener("click", (e) => {
-    e.stopPropagation()
-    overlay[i].classList.remove("active");
-    cartOverlayContainer[i].classList.remove("active");
-    currency[i]?.classList.toggle("active");
-    for (let u = 0; u < currencyArrow.length; u++) {
-      if (currency[u] !== currency[i]) {
-        currency[u]?.classList.remove("active");
+const changeColor = document.getElementsByClassName("sizes");
+for (let i = 0; i < changeColor.length; i++) {
+  changeColor[i].addEventListener("click", () => {
+    changeColor[i]?.classList.add("active");
+    for (let u = 0; u < changeColor.length; u++) {
+      if (changeColor[u] !== changeColor[i]) {
+        changeColor[u].classList.remove("active");
       }
     }
-    // console.log("aga");
+    // console.log("isleyir");
   });
 }
 
+// renglerin deyismesi ucun
+const changeSizes = document.getElementsByClassName("kholor");
+
+for (let i = 0; i < changeSizes.length; i++) {
+  changeSizes[i].addEventListener("click", () => {
+    console.log("opba");
+    changeSizes[i].classList.add("active");
+    for (let u = 0; u < changeSizes.length; u++) {
+      if (changeSizes[u] !== changeSizes[i]) {
+        changeSizes[u].classList.remove("active");
+      }
+    }
+  });
+}
+
+// pul bolmesinin acilmasi
+const currencyMenu = document.getElementsByClassName("currencyMenu");
+const currency = document.getElementsByClassName("currency");
+
+for (let i = 0; i < currencyMenu.length; i++) {
+  currencyMenu[i].addEventListener("click", (e) => {
+    e.stopPropagation();
+    currency[i].classList.toggle("active");
+    OverlayContainer[i]?.classList.remove("active");
+    cartOverlayContainer[i]?.classList.remove("active");
+    // console.log("isledi");
+  });
+}
+
+// pula vuranda slice olub evroya kecmesi ucun
+
+const money = document.getElementsByClassName("money");
+for (let i = 0; i < money.length; i++) {
+  money[i]?.addEventListener("click", () => {
+    currencyMenu[0].innerHTML =
+      money[i].innerText.slice(0, 1) +
+      " " +
+      '<i class="fa-solid fa-angle-down"></i>';
+  });
+}
+
+//? sual for elave etmesen clickde gostermir clik olundugunu
+
 window.addEventListener("click", () => {
- for(let i = 0; i < currency.length; i++){
-  if (
-    overlay[i].classList.contains("active") ||
-    cartOverlayContainer[i].classList.contains("active") ||
-    currency[i]?.classList.contains("active")
-  ) {
-  // console.log('ok')
-    overlay[i].classList.remove("active");
-    cartOverlayContainer[i].classList.remove("active");
-    currency[i]?.classList.remove("active");
-  }
- }
+  OverlayContainer[0]?.classList.remove("active");
+  cartOverlayContainer[0]?.classList.remove("active");
+  currency[0]?.classList.remove("active");
 });
 
+// artitma islemi
+const threeCounter_ = document.getElementsByClassName("threeCounter_");
 
+const threeCounterPlus = document.getElementsByClassName("threeCounterPlus");
+const threeCounterMinus = document.getElementsByClassName("threeCounterMinus");
+const propertiesColor = document.getElementsByClassName("propertiesColor");
 
-const products = [product1, product2, product3, product4]
+for (let i = 0; i < threeCounterPlus.length; i++) {
+  threeCounterPlus[i]?.addEventListener("click", () => {
+    threeCounter_[i].innerHTML = Number(threeCounter_[i].innerHTML) + 1;
+  });
+}
 
-// change
+for (let i = 0; i < threeCounterMinus.length; i++) {
+  threeCounterMinus[i]?.addEventListener("click", () => {
+    if (threeCounter_[i]?.innerHTML === "1") {
+      propertiesColor[i]?.remove();
+      
+    } else  {
+      threeCounter_[i].innerHTML = Number(threeCounter_[i].innerHTML) - 1;
+    } 
+  });
+}
+
+//divi silmek ucun
+

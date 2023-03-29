@@ -31,11 +31,11 @@ body,
 .currency.active,
 .propertiesColor,
 .counter,
-.threeCounter,
+.threeCounterPlus,
+.threeCounterMinus,
 .summa,
 .rightSide,
 .buttonns,
-.overlay.active,
 .leftImgSide
 {
   display: flex;
@@ -84,7 +84,9 @@ body,
 .currency,
 .shopping,
 .cartOverlay-container,
-.overlay {
+.overlay
+
+{
   display: none;
 }
 
@@ -176,6 +178,13 @@ a {
   font-size: 1.5rem;
 }
 
+.shoppingMenu{
+  cursor: pointer;
+}
+.shoppingMenu.active{
+  display: flex;
+}
+
 /* NAVBAR END */
 
 .typeCategory {
@@ -242,6 +251,13 @@ a {
 .cartOverlay-container.active {
   display: block;
 }
+.overlay.active{
+  display: block;
+}
+/* .newCartOverlay-container.active{
+  display: block;
+
+} */
 
 .first_word {
   padding: 1.5rem 0;
@@ -307,7 +323,7 @@ a {
   margin-right: 0.5rem;
 }
 
-.threeCounter {
+.threeCounterPlus {
   border: 1px solid black;
   text-align: center;
   padding: 0.3rem;
@@ -317,6 +333,19 @@ a {
   align-items: center;
   padding: 0.5rem;
 }
+
+.threeCounterMinus{
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
 
 .threeCounter_ {
   text-align: center;
@@ -386,6 +415,17 @@ a {
 }
 .leftImgSide img {
   width: 5rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.leftImgSide img:hover{
+  border: 1px solid black;
+  transition-duration: 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 0.3rem;
 }
 .middleSide {
   height: 110%;
@@ -403,10 +443,6 @@ a {
   background-color: black;
   color: white;
 } */
-.sizeButton.active{
-  background-color: black;
-  color: white;
-}
 
 .sizes.active{
   background-color: black;
@@ -493,6 +529,10 @@ a {
   left: 93%;
 
 }
+
+.currencyMenu{
+  z-index: 1;
+}
 .money{
   padding: 0.5rem 1.3rem;
   background-color: #FFFFFF;
@@ -514,7 +554,7 @@ a {
       z-index: 1;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      display: none;
+      /* display: none; */
       padding: 1rem;
     }
    
@@ -573,7 +613,7 @@ a {
       flex-direction: column;
       margin-right: 0.5rem;
     }
-    .threeCounter{
+    .threeCounterPlus{
       border: 1px solid black;
       text-align: center;
       padding: 0.3rem;
@@ -583,6 +623,7 @@ a {
       justify-content: center;
       align-items: center;
       padding: 0.5rem;
+      cursor: pointer;
     }
     .threeCounter_{
       text-align: center;
@@ -633,7 +674,7 @@ a {
       background-color: rgba(128, 128, 128, 0.302);
       width: 100vw;
       height: 100vmax;
-      display: none;
+      /* display: none; */
       z-index: 1;
       top: 6rem;
       left: 0;
