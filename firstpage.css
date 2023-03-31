@@ -148,6 +148,14 @@ a {
   align-items: center;
   transition: 0.3s;
 }
+.tabMenu.active{
+  display: flex;
+}
+
+.achtive.active{
+  color: #5dce7b ;
+  /* border-bottom: 1px solid #5dce7b; */
+}
 
 .tabMenu a {
   text-align: center;
@@ -211,6 +219,9 @@ a {
   padding: 1rem;
 }
 
+/* .productBoxes{
+  border: 1px solid black;
+} */
 .productBoxes p {
   padding-top: 8px;
 }
@@ -223,19 +234,21 @@ a {
   background-color: #5dce7b;
   padding: 0.8rem;
   border-radius: 50%;
-  top: 19.3rem;
-  right: 2.4rem;
+  bottom: 3rem;
+  right: 2rem;
   border: 1px solid #20c92b;
 }
 
 .productBoxes:hover .shopping {
   display: block;
+
 }
 
 .shopping i {
   color: white;
   font-size: 20px;
 }
+
 /* PRODUCT BOXES END */
 /*! CART OVERLAY START */
 .cartOverlay-container {

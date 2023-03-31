@@ -16,6 +16,24 @@ for (let i = 0; i < categoryItem.length; i++) {
   });
 }
 
+// ! kateqoriya linklerinin tabda calismasi ucun
+
+const mobileTabMenu = document.getElementsByClassName("tabMenu");
+const mobileActive = document.getElementsByClassName("achtive");
+
+
+for(let i = 0; i < mobileActive.length; i++){
+  mobileActive[i].addEventListener("click", () => {
+    mobileActive[i].classList.add("active");
+    for(let u = 0; u < mobileActive.length; u++){
+      if(mobileActive[u] !== mobileActive[i]){
+        mobileActive[u].classList.remove("active");
+
+      }
+    }
+  })
+}
+
 // ? PUL VAHIDININ DEYISMESI UCUN
 
 // ?const currencyMenu = document.getElementsByClassName("currencyMenu");
@@ -123,7 +141,7 @@ for (let i = 0; i < threeCounterPlus.length; i++) {
 for (let i = 0; i < threeCounterMinus.length; i++) {
   threeCounterMinus[i]?.addEventListener("click", () => {
     if (threeCounter_[i]?.innerHTML === "1") {
-      propertiesColor[i]?.remove();
+      propertiesColor[i].style.display = "none";
       
     } else  {
       threeCounter_[i].innerHTML = Number(threeCounter_[i].innerHTML) - 1;
@@ -132,4 +150,16 @@ for (let i = 0; i < threeCounterMinus.length; i++) {
 }
 
 //divi silmek ucun
+
+
+
+//planset modunda ikona vuranda acilib yigilmasi ucun
+const bars = document.getElementsByClassName("fa-solid fa-bars");
+const menuTab = document.getElementsByClassName("tabMenu");
+
+bars[0].addEventListener("click", () => {
+  menuTab[0].classList.toggle("active")
+});
+
+
 
