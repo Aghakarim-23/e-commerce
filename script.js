@@ -2,38 +2,6 @@ function productPage(prop) {
   window.open(`${prop}`, "_self");
 }
 
-// !kateqoriya linklerinin calismasi ucun
-
-const categoryItem = document.getElementsByClassName("categoryItem");
-for (let i = 0; i < categoryItem.length; i++) {
-  categoryItem[i]?.addEventListener("click", () => {
-    categoryItem[i].classList.add("active");
-    for (let u = 0; u < categoryItem.length; u++) {
-      if (categoryItem[u] !== categoryItem[i]) {
-        categoryItem[u].classList.remove("active");
-      }
-    }
-  });
-}
-
-// ! kateqoriya linklerinin tabda calismasi ucun
-
-const mobileTabMenu = document.getElementsByClassName("tabMenu");
-const mobileActive = document.getElementsByClassName("achtive");
-
-
-for(let i = 0; i < mobileActive.length; i++){
-  mobileActive[i].addEventListener("click", () => {
-    mobileActive[i].classList.add("active");
-    for(let u = 0; u < mobileActive.length; u++){
-      if(mobileActive[u] !== mobileActive[i]){
-        mobileActive[u].classList.remove("active");
-
-      }
-    }
-  })
-}
-
 // ? PUL VAHIDININ DEYISMESI UCUN
 
 // ?const currencyMenu = document.getElementsByClassName("currencyMenu");
@@ -142,23 +110,20 @@ for (let i = 0; i < threeCounterMinus.length; i++) {
   threeCounterMinus[i]?.addEventListener("click", () => {
     if (threeCounter_[i]?.innerHTML === "1") {
       propertiesColor[i].style.display = "none";
-      
-    } else  {
+    } else {
       threeCounter_[i].innerHTML = Number(threeCounter_[i].innerHTML) - 1;
-    } 
+    }
   });
 }
 
 //divi silmek ucun
-
-
 
 //planset modunda ikona vuranda acilib yigilmasi ucun
 const bars = document.getElementsByClassName("fa-solid fa-bars");
 const menuTab = document.getElementsByClassName("tabMenu");
 
 bars[0].addEventListener("click", () => {
-  menuTab[0].classList.toggle("active")
+  menuTab[0].classList.toggle("active");
 });
 
 const data = `[
@@ -333,91 +298,140 @@ const data = `[
       "__v": 0
   },
   {
-      "_id": "6421764d73e987d7d72143e5",
-      "title": "BMW X6",
-      "brand": "BMW",
-      "desc": "Cool car!",
-      "images": [
-          "https://hips.hearstapps.com/hmg-prod/images/p90495559-1677001917.jpg"
-      ],
-      "category": "car",
-      "sizes": [],
-      "colors": [],
-      "price": 50000,
-      "inStock": true,
-      "createdAt": "2023-03-27T10:56:13.141Z",
-      "updatedAt": "2023-03-27T10:56:13.141Z",
-      "__v": 0
-  },
-  {
-      "_id": "6421827b73e987d7d72143f1",
-      "title": "BMW X5",
-      "brand": "BMW",
-      "desc": "Cool car!",
-      "images": [
-          "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcarleaseoffers-clo.com%2Fwp-content%2Fuploads%2F2018%2F02%2FCar-Lease-Offers-CLO-BMW-X6-2015-1280-22.jpg&f=1&nofb=1&ipt=4f5343ed36e5364fc45f9b233fd74c10c01b40f09469b4d348b7af1daf6cc0ab&ipo=images"
-      ],
-      "category": "car",
-      "sizes": [],
-      "colors": [],
-      "price": 50000,
-      "inStock": true,
-      "createdAt": "2023-03-27T11:48:11.971Z",
-      "updatedAt": "2023-03-27T11:48:11.971Z",
-      "__v": 0
-  },
-  {
-      "_id": "6421c44e95a6d4e1e38c30d6",
-      "title": "Model X",
-      "brand": "Tesla",
-      "desc": "Cool car!",
-      "images": [
-          "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.marinoperformancemotors.com%2Fimagetag%2F13352%2F6%2Fl%2FUsed-2019-Tesla-Model-X-Performance.jpg&f=1&nofb=1&ipt=f3716013760118bf631053f2b65b09a44bd3b3b55254bf11a222c95b933204dc&ipo=images"
-      ],
-      "category": "car",
-      "sizes": [],
-      "colors": [],
-      "price": 100000,
-      "inStock": true,
-      "createdAt": "2023-03-27T16:29:02.861Z",
-      "updatedAt": "2023-03-27T16:29:02.861Z",
-      "__v": 0
-  },
-  {
-      "_id": "6422e3560f5f5aeeaecb3ede",
-      "title": "Model Y",
-      "brand": "Tesla",
-      "desc": "Cool car!",
-      "images": [
-          "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.marinoperformancemotors.com%2Fimagetag%2F13352%2F6%2Fl%2FUsed-2019-Tesla-Model-X-Performance.jpg&f=1&nofb=1&ipt=f3716013760118bf631053f2b65b09a44bd3b3b55254bf11a222c95b933204dc&ipo=images"
-      ],
-      "category": "car",
-      "sizes": [],
-      "colors": [],
-      "price": 100000,
-      "inStock": true,
-      "createdAt": "2023-03-28T12:53:42.951Z",
-      "updatedAt": "2023-03-28T12:53:42.951Z",
-      "__v": 0
+    "_id": "64207e5262db63daebce78e0",
+    "title": "Apple",
+    "brand": "Apple",
+    "desc": "Never lose your stuff again!",
+    "images": [
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000"
+    ],
+    "category": "accessories",
+    "sizes": [],
+    "colors": [],
+    "price": 50,
+    "inStock": true,
+    "createdAt": "2023-03-26T17:18:10.992Z",
+    "updatedAt": "2023-03-26T17:18:10.992Z",
+    "__v": 0
+}
+
+]`;
+
+const productsContainer = document.getElementsByClassName("productsContainer");
+
+const dataObj = JSON.parse(data);
+
+// dataObj.map((obj) =>{
+//   const templateProduct = `
+//   <div class="productBoxes" onclick="productPage('fifthProductPage.html')">
+//           <img src=${obj.images[0]} alt="ilkPhoto" />
+//           <a href="#" class="shopping"
+//             ><i class="fa-solid fa-cart-shopping"></i
+//           ></a>
+//           <p>${obj.title}</p>
+//           <p class="bold">$${obj.price}</p>
+//         </div>`
+//   productsContainer[0].innerHTML = productsContainer[0].innerHTML + templateProduct
+// })
+
+let allCategories = [];
+let uniqueArr = [];
+let activeCategory = "";
+const leftDiv = document.getElementsByClassName("leftDiv");
+let filteredProducts = [];
+let unfilteredProducts = dataObj;
+let categoryName = document.getElementById("categoryName");
+addProducts();
+
+for (let i = 0; i < dataObj.length; i++) {
+  allCategories.push(dataObj[i].category);
+  uniqueArr = [...new Set(allCategories)];
+}
+
+for (let i = 0; i < uniqueArr.length; i++) {
+  const categoryItemTemplate = `
+  <a href="#" class="categoryItem">${uniqueArr[i]}</a>`;
+  leftDiv[0].innerHTML = leftDiv[0].innerHTML + categoryItemTemplate;
+}
+
+const categoryItem = document.getElementsByClassName("categoryItem");
+
+for (let i = 0; i < categoryItem.length; i++) {
+  categoryItem[i]?.addEventListener("click", () => {
+    categoryItem[i].classList.add("active");
+    setActiveCategory(i);
+
+    for (let u = 0; u < categoryItem.length; u++) {
+      if (categoryItem[u] !== categoryItem[i]) {
+        categoryItem[u].classList.remove("active");
+      }
+    }
+  });
+}
+
+function setActiveCategory(i) {
+  filteredProducts = [];
+  unfilteredProducts = [];
+  activeCategory = categoryItem[i].innerText;
+  categoryName.innerText = categoryItem[i].innerText;
+  console.log(activeCategory);
+  for (let i = 0; i < dataObj.length; i++) {
+    if (dataObj[i].category === activeCategory) {
+      filteredProducts.push(dataObj[i]);
+    } else if (dataObj[i].category !== activeCategory) {
+      unfilteredProducts.push(dataObj[i]);
+    }
   }
-]`
+  addProducts();
+}
 
-const productsContainer = document.getElementsByClassName("productsContainer")
+function addProducts() {
+  productsContainer[0].innerHTML = "";
+  if (filteredProducts.length) {
+    filteredProducts.map((item) => {
+      const templateProduct = `
+         <div class="productBoxes" onclick="productPage('fifthProductPage.html')">
+            <img src=${item.images[0]} alt="ilkPhoto" />
+            <a href="#" class="shopping"
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+            <p>${item.title}</p>
+            <p class="bold">$${item.price}</p>
+          </div>`;
 
-const dataObj = JSON.parse(data)
+      productsContainer[0].innerHTML =
+        productsContainer[0].innerHTML + templateProduct;
+    });
+  } else {
+    unfilteredProducts.map((item) => {
+      const templateProduct = `
+         <div class="productBoxes" onclick="productPage('fifthProductPage.html')">
+            <img src=${item.images[0]} alt="ilkPhoto" />
+            <a href="#" class="shopping"
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+            <p>${item.title}</p>
+            <p class="bold">$${item.price}</p>
+          </div>`;
 
-dataObj.map((obj) =>{
-  const templateProduct = `
-  <div class="productBoxes" onclick="productPage('fifthProductPage.html')">
-          <img src=${obj.images[0]} alt="ilkPhoto" />
-          <a href="#" class="shopping"
-            ><i class="fa-solid fa-cart-shopping"></i
-          ></a>
-          <p>${obj.title}</p>
-          <p class="bold">$${obj.price}</p>
-        </div>`
-  productsContainer[0].innerHTML = [...productsContainer[0].innerHTML, templateProduct]
-  console.log(templateProduct)
-})
+      productsContainer[0].innerHTML =
+        productsContainer[0].innerHTML + templateProduct;
+    });
+  }
+}
 
+// ! kateqoriya linklerinin tabda calismasi ucun
 
+const mobileTabMenu = document.getElementsByClassName("tabMenu");
+const mobileActive = document.getElementsByClassName("achtive");
+
+for (let i = 0; i < mobileActive.length; i++) {
+  mobileActive[i].addEventListener("click", () => {
+    mobileActive[i].classList.add("active");
+    for (let u = 0; u < mobileActive.length; u++) {
+      if (mobileActive[u] !== mobileActive[i]) {
+        mobileActive[u].classList.remove("active");
+      }
+    }
+  });
+}

@@ -79,6 +79,11 @@ body,
   width: 100%;
 }
 
+.productBoxes img{
+  height: 22rem;
+  object-fit: scale-down;
+}
+
 /* ! Noneler */
 .tabMenu,
 .currency,
